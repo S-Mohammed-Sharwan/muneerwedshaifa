@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#5a582c" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#5a582c" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#5a582c" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <script>
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    </script>
+    <style>
+      html,
+      body {
+        background: #5a582c;
+      }
+    </style>
+    <meta
+      name="description"
+      content="You're invited to celebrate the marriage of Ahmed Muneer &amp; Haifa Asshareefa on Monday 23 November 2026, Nikah at 11:30 AM, at Zara Convention Centre, Ganjimata, Mangalore."
+    />
+    <!-- Social / WhatsApp link preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ahmed Muneer &amp; Haifa Asshareefa" />
+    <meta property="og:url" content="https://muneer-haifa.vercel.app/" />
+    <link rel="canonical" href="https://muneer-haifa.vercel.app/" />
+    <meta property="og:title" content="Ahmed Muneer &amp; Haifa Asshareefa — Wedding invitation" />
+    <meta
+      property="og:description"
+      content="You're invited to celebrate with us on Monday 23 November 2026. Nikah at 11:30 AM at Zara Convention Centre, Ganjimata, Mangalore."
+    />
+    <meta property="og:image" content="https://muneer-haifa.vercel.app/assets/og-banner.jpg" />
+    <meta property="og:image:secure_url" content="https://muneer-haifa.vercel.app/assets/og-banner.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Wedding invitation for Ahmed Muneer and Haifa Asshareefa, 23 November 2026, Zara Convention Centre" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ahmed Muneer &amp; Haifa Asshareefa — Wedding invitation" />
+    <meta
+      name="twitter:description"
+      content="You're invited to celebrate with us on Monday 23 November 2026. Nikah at 11:30 AM. Tap through for more details."
+    />
+    <meta name="twitter:image" content="https://muneer-haifa.vercel.app/assets/og-banner.jpg" />
+    <title>Muneer &amp; Haifa — Wedding Day, 23 November 2026</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Imperial+Script&family=Inter:wght@300;400;500&family=Lateef:wght@400&display=swap"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Imperial+Script&family=Inter:wght@300;400;500&family=Lateef:wght@400&display=swap" /></noscript>
+
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Mobile envelope only — fetch early so images aren’t staggered on first paint -->
+    <link rel="preload" as="image" href="./assets/top_envelope_flap_true_transparent.webp" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="./assets/bottomenvelope.webp" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="./assets/leftenvelope.webp" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="./assets/rightenvelope.webp" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="./assets/wax-seal-v2.webp" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="./assets/clickicon.png" media="(max-width: 767px)" />
+  </head>
+  <body>
+    <!-- Direct child of body so position:fixed is not trapped by .page overflow -->
+    <section id="introOverlay" class="intro-overlay" aria-label="Open invitation">
+        <p class="env-loading-hint" id="envLoadingHint" aria-live="polite">Loading invitation…</p>
+        <div class="env-scene" id="envScene">
+          <div class="flap flap-top"></div>
+          <div class="flap flap-bottom"></div>
+          <div class="flap flap-left"></div>
+          <div class="flap flap-right"></div>
+          <div class="seal-area" id="sealArea">
+            <button class="seal-hit" id="sealBtn" type="button" aria-label="Open invitation">
+              <span class="seal-ripple" id="sealRipple" aria-hidden="true"></span>
+            </button>
+            <p class="tap-hint">CLICK TO OPEN</p>
+          </div>
+          <!-- Outside .seal-area so position:fixed is viewport-based (ancestor has transform) -->
+          <span class="ui-guide ui-guide--click-icon ui-guide--seal" aria-hidden="true">
+            <img
+              class="ui-guide__img"
+              src="./assets/clickicon.png"
+              alt=""
+              width="64"
+              height="64"
+              decoding="async"
+            />
+          </span>
+        </div>
+      </section>
+
+    <audio id="weddingAudio" src="./assets/audio/wedding-nasheed.mp3" preload="metadata"></audio>
+    <main class="page">
+
+      <!-- Main invitation content -->
+      <section id="invitationContent" class="invitation-content" aria-hidden="true">
+        <div class="scroll-hint" id="scrollHint" role="status" aria-live="polite" aria-label="Scroll for more">
+          <span class="scroll-hint__label">Scroll</span>
+          <span class="scroll-hint__chev" aria-hidden="true"></span>
+        </div>
+        <div class="invitation-stack">
+
+          <!-- Hero -->
+          <div class="hero-panel">
+            <div class="hero-media" aria-hidden="true">
+              <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata">
+                <source src="./assets/hero-video.mp4" type="video/mp4">
+              </video>
+              <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-copy">
+              <p class="hero-bismillah" lang="ar" dir="rtl" translate="no" title="In the name of Allah, the Most Gracious, the Most Merciful">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+              <p class="hero-kicker">The Nikah of</p>
+              <h1>
+                <span class="hero-name hero-name--a">Muneer</span>
+                <span class="ampersand">&amp;</span>
+                <span class="hero-name hero-name--b">Haifa</span>
+              </h1>
+              <span class="hero-ornament" aria-hidden="true"></span>
+            </div>
+            <img class="hero-bottom-edge" src="./assets/Mask_group_2_1_Trace.svg" alt="" aria-hidden="true" />
+          </div>
+
+          <!-- Welcome + countdown -->
+          <section class="band band--wine band--welcome-countdown" aria-label="Welcome">
+            <div class="band__inner">
+              <div class="sec-welcome">
+                <div class="welcome-inner">
+                  <h2 class="welcome-heading">Dear Family &amp; Friends,</h2>
+                  <p class="invite-host">Mr. Late Kunhali Musthafa &amp; Mrs. Mumthaz</p>
+                  <p class="invite-address">With the blessings of our families</p>
+                  <p class="welcome-body">cordially invite you to the Nikah ceremony of</p>
+                  <p class="invite-person">Ahmed Muneer</p>
+                  <p class="invite-with">with</p>
+                  <p class="invite-person">Haifa Asshareefa</p>
+                  <p class="invite-lineage">Daughter of Abdul Azeem<br>Sulthan Mohalla, Gangolli</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Countdown -->
+          <section class="band band--cream sec-countdown-band" aria-label="Countdown">
+            <div class="band-edge band-edge--top" aria-hidden="true">
+              <img src="./assets/Mask_group_2_1_Trace.svg" alt="" />
+            </div>
+            <div class="band__inner sec-countdown-inner">
+              <p class="countdown-label">Nikah Begins In</p>
+              <div class="countdown">
+                <div class="cd-unit">
+                  <span id="cd-days" class="cd-num">00</span>
+                  <span class="cd-lbl">Days</span>
+                </div>
+                <span class="cd-sep">:</span>
+                <div class="cd-unit">
+                  <span id="cd-hours" class="cd-num">00</span>
+                  <span class="cd-lbl">Hours</span>
+                </div>
+                <span class="cd-sep">:</span>
+                <div class="cd-unit">
+                  <span id="cd-mins" class="cd-num">00</span>
+                  <span class="cd-lbl">Minutes</span>
+                </div>
+                <span class="cd-sep">:</span>
+                <div class="cd-unit">
+                  <span id="cd-secs" class="cd-num">00</span>
+                  <span class="cd-lbl">Seconds</span>
+                </div>
+              </div>
+            </div>
+            <div class="band-edge band-edge--bottom" aria-hidden="true">
+              <img src="./assets/Mask_group_2_1_Trace.svg" alt="" />
+            </div>
+          </section>
+
+          <!-- Schedule of Events -->
+          <section class="band band--wine sec-schedule-band" aria-label="Schedule of Events">
+            <div class="sec-schedule-inner">
+              <h2 class="sch-heading">Schedule of Events</h2>
+              <div class="schedule-timeline" id="scheduleTimeline">
+                <img class="timeline-flower" id="timelineFlower"
+                     src="./assets/flower-white-large.webp" alt="" aria-hidden="true" />
+                <ul class="schedule-list">
+                  <li class="schedule-item">
+                    <span class="sch-time">Monday</span>
+                    <span class="sch-dot"></span>
+                    <span class="sch-event">23 November<br>2026</span>
+                  </li>
+                  <li class="schedule-item">
+                    <span class="sch-time">Hijri</span>
+                    <span class="sch-dot"></span>
+                    <span class="sch-event">13 Jumada al-Akhirah 1448</span>
+                  </li>
+                  <li class="schedule-item">
+                    <span class="sch-time">Nikah</span>
+                    <span class="sch-dot"></span>
+                    <span class="sch-event">11:30 AM<br>Zara Convention Centre</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Location -->
+          <section class="band band--cream sec-location-band" aria-label="Location">
+            <div class="band-edge band-edge--top" aria-hidden="true">
+              <img src="./assets/Mask_group_2_1_Trace.svg" alt="" />
+            </div>
+            <div class="sec-location-inner">
+              <h2 class="location-heading">Location</h2>
+              <figure class="venue-illustration">
+                <img
+                  src="./assets/images/zara-location-v2.webp"
+                  alt="Illustration of Zara Convention Centre framed by palms and landscaping"
+                  width="1400"
+                  height="719"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+                <figcaption class="venue-name">Zara Convention Centre</figcaption>
+              </figure>
+              <p class="venue-address">Ganjimata, Mangalore</p>
+              <div class="venue-map-block">
+                <a
+                  class="venue-map-link"
+                  href="https://www.google.com/maps/place/Zara+Convention+Centre/@12.9739005,74.9442156,1099m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3ba357218b269f09:0x886f402eed8a0a08!8m2!3d12.9739005!4d74.9467905!16s%2Fg%2F11s0s4hmh5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Google Maps directions to Zara Convention Centre"
+                >
+                  <span class="ui-guide ui-guide--click-icon ui-guide--location" aria-hidden="true">
+                    <img
+                      class="ui-guide__img"
+                      src="./assets/clickicon.png"
+                      alt=""
+                      width="48"
+                      height="48"
+                      decoding="async"
+                    />
+                  </span>
+                  Google Maps
+                </a>
+                <p class="venue-map-hint">Click to get directions</p>
+              </div>
+            </div>
+            <div class="band-edge band-edge--bottom" aria-hidden="true">
+              <img src="./assets/Mask_group_2_1_Trace.svg" alt="" />
+            </div>
+          </section>
+
+          <!-- A quote we love -->
+          <section class="band band--wine sec-quran-band" aria-label="A quote we love">
+            <div class="sec-quran-inner">
+              <blockquote class="quran-verse">
+                <p class="quran-en"><span class="qmark">&ldquo;</span>Your duas and presence would mean everything to us. We hope you will celebrate this special day with us.<span class="qmark">&rdquo;</span></p>
+              </blockquote>
+            </div>
+          </section>
+
+          <!-- Closing note (was event details + RSVP seam — restore bottom padding in CSS if RSVP returns) -->
+          <section class="band band--cream sec-details-band" aria-label="A note from the couple">
+            <div class="band-edge band-edge--top" aria-hidden="true">
+              <img src="./assets/Mask_group_2_1_Trace.svg" alt="" />
+            </div>
+            <div class="sec-details-inner">
+              <img class="details-card-art" src="./assets/images/floral-bismillah-v2.webp" alt="Updated gold floral wedding monogram" width="2400" height="1792" decoding="async" />
+              <p class="details-hope">We hope you will be there.</p>
+              <p class="details-signoff">Muneer <span class="details-signoff-amp">&amp;</span> Haifa</p>
+              <p class="details-event-note">Best wishes from</p>
+              <p class="details-event-org">Relatives &amp; Friends</p>
+              <p class="details-contact">For details, please call</p>
+              <p class="details-phones">
+                <a class="details-phone" href="tel:+918050376944">+91 80503 76944</a>
+              </p>
+            </div>
+          </section>
+
+          <!-- Confirm Attendance: temporarily off (remove hidden + next line to restore) -->
+          <section class="band band--wine sec-rsvp-band" aria-label="Confirm Attendance" hidden aria-hidden="true" data-commented-out="rsvp-band">
+            <!-- Centered on Details/RSVP seam: half in cream, half in wine (needs to live in RSVP for correct paint order) -->
+            <div class="details-flowers details-flowers--seam" aria-hidden="true">
+              <div class="details-flowers-cluster" id="detailsFlowers">
+                <img class="df df-white-left"  src="./assets/flower-white-large.webp" alt="" />
+                <img class="df df-white-right" src="./assets/flower-white-large.webp" alt="" />
+                <img class="df df-white-bud"   src="./assets/flower-white-bud.webp"   alt="" />
+                <img class="df df-red-small"   src="./assets/flower-red-small.png"     alt="" />
+                <img class="df df-red-medium"  src="./assets/flower-red-medium.webp"   alt="" />
+                <img class="df df-red-large"   src="./assets/flower-red-large.webp"    alt="" />
+              </div>
+            </div>
+            <div class="sec-rsvp-inner">
+              <h2 class="rsvp-heading">Confirm Your Attendance</h2>
+              <p class="rsvp-desc">So we can plan seating, food, and space with care,<br>kindly let us know if you will join us.</p>
+              <button type="button" class="rsvp-pill" id="rsvpOpenBtn" aria-haspopup="dialog" aria-controls="rsvpDialog">
+                Click here
+              </button>
+              <p class="rsvp-closing">We pray Allah blesses our union and yours.</p>
+              <p class="rsvp-heading">Hope to see you there!</p>
+              <p class="rsvp-names">Muneer &amp; Haifa</p>
+            </div>
+          </section>
+
+        </div><!-- /.invitation-stack -->
+      </section>
+
+    </main>
+
+    <!-- RSVP submissions → Formspree dashboard: https://formspree.io -->
+    <dialog id="rsvpDialog" class="rsvp-dialog" aria-labelledby="rsvpDialogTitle">
+      <div class="rsvp-dialog__panel">
+        <button type="button" class="rsvp-dialog__x" id="rsvpDialogCloseX" aria-label="Close dialog">&times;</button>
+        <h3 id="rsvpDialogTitle" class="rsvp-dialog__title"></h3>
+
+        <div id="rsvpDialogFormWrap">
+          <p class="rsvp-dialog__text">
+            Please share a few details so we can plan seating and hospitality.
+          </p>
+          <form
+            id="rsvpModalForm"
+            class="rsvp-dialog__form"
+            action="#"
+            method="POST"
+            novalidate
+          >
+            <input type="hidden" name="_subject" value="Wedding RSVP — Muneer &amp; Haifa" />
+            <p class="rsvp-dialog__hp" aria-hidden="true">
+              <label>Don&rsquo;t fill this out: <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+            </p>
+
+            <div class="rsvp-dialog__field">
+              <label class="rsvp-dialog__label" for="rsvpGuestName">Your name</label>
+              <input class="rsvp-dialog__input" type="text" id="rsvpGuestName" name="guest_name" required autocomplete="name" maxlength="120" placeholder="Full name" />
+            </div>
+
+            <fieldset class="rsvp-dialog__fieldset">
+              <legend class="rsvp-dialog__legend">Will you attend the marriage?</legend>
+              <div class="rsvp-dialog__radios">
+                <label class="rsvp-dialog__radio">
+                  <input type="radio" name="will_attend" value="Yes" required />
+                  <span>Yes</span>
+                </label>
+                <label class="rsvp-dialog__radio">
+                  <input type="radio" name="will_attend" value="No" required />
+                  <span>No</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="rsvp-dialog__field" id="rsvpGuestCountWrap">
+              <label class="rsvp-dialog__label" for="rsvpGuestCount">How many people will come (including yourself)?</label>
+              <input class="rsvp-dialog__input" type="number" id="rsvpGuestCount" name="guest_count" min="1" max="50" step="1" inputmode="numeric" placeholder="e.g. 2" disabled />
+              <p class="rsvp-dialog__hint" id="rsvpGuestCountHint">Select whether you will attend first.</p>
+            </div>
+
+            <p class="rsvp-dialog__error" id="rsvpDialogError" hidden role="alert"></p>
+
+            <button type="submit" class="rsvp-dialog__submit" id="rsvpDialogSubmit">Submit RSVP</button>
+            <button type="button" class="rsvp-dialog__dismiss" id="rsvpDialogDismiss">Cancel</button>
+          </form>
+        </div>
+
+        <div id="rsvpDialogThanks" class="rsvp-dialog__thanks" hidden role="status">
+          <p class="rsvp-dialog__thanks-title">Thank you</p>
+          <p class="rsvp-dialog__text">Your RSVP has been recorded. We are grateful — see you at Zara Convention Centre, InshaAllah.</p>
+          <button type="button" class="rsvp-dialog__submit" id="rsvpDialogThanksClose">Close</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="./assets/gsap.min.js"></script>
+    <script src="./assets/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
